@@ -39,22 +39,22 @@ class OnTapState extends State<OnTap> {
       onHorizontalDragEnd: (DragEndDetails details) {
         setState(() {
           print(details.toString());
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => SecondScreen()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondScreen()),
+          );
         });
       },
-      // onTap: () {
-      //   setState(() {
-      //     boolTap = !boolTap;
-      //     print('On Tap one!');
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => SecondScreen()),
-      //     );
-      //   });
-      // }
+      onTap: () {
+        setState(() {
+          boolTap = !boolTap;
+          print('On Tap one!');
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondScreen()),
+          );
+        });
+      }
     );
   }
 
