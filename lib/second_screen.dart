@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'skin_one.dart';
+import 'skin_two.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -13,39 +15,49 @@ class SecondScreenState extends State<SecondScreen> {
 
   Widget build(BuildContext context) {
     return GestureDetector(
-        child: SafeArea(
-          child: Container(
-            color: getColor(boolTap),
-            child: Center(
-              child: Text('TWO'),
-            ),
-          ),
-        ),
-              onHorizontalDragEnd: (DragEndDetails details) {
-        setState(() {
-          print('onHorizontalDragEnd!');
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => OnTap()),
-          );
-        });
-        // onTap: () {
-        //   setState(() {
-        //     boolTap = !boolTap;
-        //     print('On Tap TWO!');
-        //                 Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => OnTap()),
-        //     );
-        //   });
-         }
+      child: skin_two(),
+     // SafeArea(
+      //   child: Container(
+      //     color: getColor(boolTap),
+      //     child: Center(
+      //       child: Text('TWO'),
+      //     ),
+      //   ),
+      // ),
+      onHorizontalDragEnd: (DragEndDetails details) {
+        setState(
+          () {
+            print('onHorizontalDragEnd!');
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => OnTap()),
+            );
+          },
         );
+      },
+      // onDoubleTap: () {
+      //   setState(() {
+      //     boolTap = !boolTap;
+      //     print('On Tap TWO!');
+      //   });
+      // },
+
+      // onTap: () {
+      //   setState(() {
+      //     boolTap = !boolTap;
+      //     print('On Tap TWO!');
+      //                 Navigator.push(
+      //       context,
+      //       MaterialPageRoute(builder: (context) => OnTap()),
+      //     );
+      //   });
+    );
   }
 
   MaterialColor getColor(bool ontopped) {
-    MaterialColor colorsafe = Colors.green;
+    MaterialColor colorsafe = Colors.blue;
     if (ontopped) {
-      colorsafe = Colors.blue;
+      colorsafe = Colors.purple;
     }
     return colorsafe;
   }
